@@ -84,3 +84,26 @@ numero_amostra,accel_x,accel_y,accel_z,giro_x,giro_y,giro_z
 1,0.0012,-0.0048,1.0024,0.1200,-0.0870,0.0030
 2,0.0008,-0.0044,1.0032,0.1198,-0.0873,0.0031
 ...
+```
+---
+
+## 📈 Visualização dos Dados (Gráficos)
+
+Os dados registrados no cartão SD podem ser visualizados graficamente por meio de um script Python chamado `plot_imu_data_completo.py`, incluído neste repositório.
+
+Este script realiza automaticamente as seguintes etapas:
+
+1. 📡 **Conecta ao Raspberry Pi Pico via porta serial** e envia o comando `'d'` para solicitar o conteúdo do arquivo `.csv`;
+2. 💾 **Salva o conteúdo recebido** em um arquivo chamado `imu_data.csv` dentro da pasta `ArquivosDados/`;
+3. 📊 **Gera dois gráficos separados** com base no número da amostra:
+   - **Gráfico de aceleração**: aceleração nos eixos **X, Y e Z** (em g);
+   - **Gráfico de giroscópio**: velocidade angular nos eixos **X, Y e Z** (em °/s).
+
+Esses gráficos fornecem uma visualização clara e intuitiva dos dados de movimento capturados, permitindo análise de padrões e comportamento do sistema.
+
+> ⚠️ **Atenção:** Antes de executar o script, verifique se:
+> - O cartão SD está **montado**;
+> - O arquivo `imu_data.csv` existe e está acessível no cartão SD;
+> - A porta COM do dispositivo está corretamente configurada no script.
+
+
